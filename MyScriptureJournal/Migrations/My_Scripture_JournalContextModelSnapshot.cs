@@ -3,17 +3,15 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyScriptureJournal.Models;
+using My_Scripture_Journal.Models;
 
-namespace MyScriptureJournal.Migrations
+namespace My_Scripture_Journal.Migrations
 {
-    [DbContext(typeof(MyScriptureJournalContext))]
-    [Migration("20200606155840_Initial")]
-    partial class Initial
+    [DbContext(typeof(My_Scripture_JournalContext))]
+    partial class My_Scripture_JournalContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +19,7 @@ namespace MyScriptureJournal.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MyScriptureJournal.Models.JournalEntry", b =>
+            modelBuilder.Entity("My_Scripture_Journal.Models.JournalEntry", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -31,11 +29,14 @@ namespace MyScriptureJournal.Migrations
                     b.Property<string>("Book")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Chapter")
-                        .HasColumnType("int");
+                    b.Property<string>("Chapter")
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ReleaseDate")
+                    b.Property<DateTime>("EntryDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Notes")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Verse")
                         .HasColumnType("nvarchar(max)");

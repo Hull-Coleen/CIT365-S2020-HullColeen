@@ -5,13 +5,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MyScriptureJournal.Models;
+using My_Scripture_Journal.Models;
 
-namespace MyScriptureJournal.Migrations
+namespace My_Scripture_Journal.Migrations
 {
-    [DbContext(typeof(MyScriptureJournalContext))]
-    [Migration("20200606160252_Notes")]
-    partial class Notes
+    [DbContext(typeof(My_Scripture_JournalContext))]
+    [Migration("20200528102906_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace MyScriptureJournal.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MyScriptureJournal.Models.JournalEntry", b =>
+            modelBuilder.Entity("My_Scripture_Journal.Models.JournalEntry", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
@@ -31,14 +31,14 @@ namespace MyScriptureJournal.Migrations
                     b.Property<string>("Book")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Chapter")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("EntryDate")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Notes")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("ReleaseDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Topic")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Verse")
                         .HasColumnType("nvarchar(max)");

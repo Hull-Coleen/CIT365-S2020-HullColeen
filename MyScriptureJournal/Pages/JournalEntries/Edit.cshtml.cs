@@ -6,15 +6,15 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using MyScriptureJournal.Models;
+using My_Scripture_Journal.Models;
 
-namespace MyScriptureJournal.Pages.JournalEntries
+namespace My_Scripture_Journal.Pages.JournalEntries
 {
     public class EditModel : PageModel
     {
-        private readonly MyScriptureJournal.Models.MyScriptureJournalContext _context;
+        private readonly My_Scripture_Journal.Models.My_Scripture_JournalContext _context;
 
-        public EditModel(MyScriptureJournal.Models.MyScriptureJournalContext context)
+        public EditModel(My_Scripture_Journal.Models.My_Scripture_JournalContext context)
         {
             _context = context;
         }

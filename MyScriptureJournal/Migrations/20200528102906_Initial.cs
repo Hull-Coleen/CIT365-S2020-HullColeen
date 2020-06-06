@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace MyScriptureJournal.Migrations
+namespace My_Scripture_Journal.Migrations
 {
     public partial class Initial : Migration
     {
@@ -13,10 +13,11 @@ namespace MyScriptureJournal.Migrations
                 {
                     ID = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    ReleaseDate = table.Column<DateTime>(nullable: false),
                     Book = table.Column<string>(nullable: true),
-                    Chapter = table.Column<int>(nullable: false),
-                    Verse = table.Column<string>(nullable: true)
+                    EntryDate = table.Column<DateTime>(nullable: false),
+                    Verse = table.Column<string>(nullable: true),
+                    Notes = table.Column<string>(nullable: true),
+                    Topic = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

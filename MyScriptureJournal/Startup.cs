@@ -9,9 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using MyScriptureJournal.Models;
+using My_Scripture_Journal.Models;
 
-namespace MyScriptureJournal
+namespace My_Scripture_Journal
 {
     public class Startup
     {
@@ -27,8 +27,8 @@ namespace MyScriptureJournal
         {
             services.AddRazorPages();
 
-            services.AddDbContext<MyScriptureJournalContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MyScriptureJournalContext")));
+            services.AddDbContext<My_Scripture_JournalContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("My_Scripture_JournalContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

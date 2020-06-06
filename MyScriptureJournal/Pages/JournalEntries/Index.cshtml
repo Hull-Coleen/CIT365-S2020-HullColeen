@@ -1,58 +1,90 @@
 ﻿@page
-@model MyScriptureJournal.Pages.JournalEntries.IndexModel
+@model My_Scripture_Journal.Pages.JournalEntries.IndexModel
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>My Scripture Notes</h1>
 
 <p>
-    <a asp-page="Create">Create New</a>
+    <a class="link" asp-page="Create">Create New Note</a>
 </p>
+<hr />
+<form>
+    <p>
+        <select class="link" asp-for="JournalEntryBook" asp-items="Model.Books">
+            <option value="">Book :</option>
+        </select><span>   </span>
+        Book : <input class="indexSelect" type="text" asp-for="SearchString" />
+        <span>   </span>
+        Keyword : <input class="indexSelect" type="text" asp-for="newSearchString" /><span>   </span>
+        <input class="link" type="submit" value="Filter" />
+    </p>
+
+</form>
+
 <table class="table">
-    <thead>
+    <thead class="thread">
+
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.JournalEntry[0].ReleaseDate)
+            <th class="indexDateCol">
+                <a class="indexNav" asp-page="./Index" asp-route-sortOrder="@Model.DateSort">
+                    @Html.DisplayNameFor(model => model.JournalEntry[0].EntryDate)
+                </a>
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.JournalEntry[0].Book)
+            <th class="indexBookCol">
+                <a class="indexNav" asp-page="./Index" asp-route-sortOrder="@Model.BookSort">
+                    @Html.DisplayNameFor(model => model.JournalEntry[0].Book)
+                </a>
             </th>
-            <th>
+            <th class="indexTopicCol">
                 @Html.DisplayNameFor(model => model.JournalEntry[0].Chapter)
             </th>
-            <th>
+            <th class="indexVerseCol">
                 @Html.DisplayNameFor(model => model.JournalEntry[0].Verse)
             </th>
-            <th>
+            <th class="indexNotesCol">
                 @Html.DisplayNameFor(model => model.JournalEntry[0].Notes)
             </th>
-            <th></th>
+           
         </tr>
+
     </thead>
+
     <tbody>
-@foreach (var item in Model.JournalEntry) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ReleaseDate)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Book)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Chapter)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Verse)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Notes)
-                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.JournalEntry)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EntryDate)
+                   
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Book)
+                    
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Chapter)
+                    
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Verse)
+                    
+                </td>
+                <td>
+                    <div class="indexNotes">
+                        @Html.DisplayFor(modelItem => item.Notes)
+                    </div><br />
+                    <a class="indexNav" asp-page="./Edit" asp-route-id="@item.ID">Edit</a> <span>   </span>
+                    <a class="indexNav" asp-page="./Details" asp-route-id="@item.ID">Details</a><span>   </span>
+                    <a class="indexNav" asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+                 
+                </td>
+
+            </tr>
+        }
+
     </tbody>
 </table>

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-namespace MyScriptureJournal.Pages
+namespace My_Scripture_Journal.Pages
 {
     public class PrivacyModel : PageModel
     {
