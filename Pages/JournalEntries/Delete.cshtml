@@ -1,0 +1,201 @@
+﻿@page "{id:int?}"
+@model My_Scripture_Journal.Pages.JournalEntries.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+
+<br />
+<h1>
+    Are you sure you want to delete @Html.DisplayFor(model => model.JournalEntry.Book)
+    @Html.DisplayFor(model => model.JournalEntry.Chapter)
+    @Html.DisplayFor(model => model.JournalEntry.Verse)?
+</h1>
+<hr />
+<br />
+<br />
+
+<div>
+
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <div class="rowD">
+                <p id="details">
+                    @Html.DisplayNameFor(model => model.JournalEntry.EntryDate) :
+                    @Html.DisplayFor(model => model.JournalEntry.EntryDate)
+                </p><br />
+
+            </div>
+            <div class="rowD">
+                <p id="details">
+                    @Html.DisplayNameFor(model => model.JournalEntry.Book) :
+                    @Html.DisplayFor(model => model.JournalEntry.Book)
+                </p><br />
+            </div>
+            <div class="rowD">
+                <p id="details">
+                    @Html.DisplayNameFor(model => model.JournalEntry.Chapter) :
+                    @Html.DisplayFor(model => model.JournalEntry.Chapter)
+                </p><br />
+            </div>
+            <div class="rowD">
+                <p id="details">
+                    @Html.DisplayNameFor(model => model.JournalEntry.Verse) :
+                    @Html.DisplayFor(model => model.JournalEntry.Verse)
+                </p>
+            </div>
+
+        </div>
+        <div class="col-md-.5"></div>
+        <div class="col-md-6">
+            <p id="detailsNotes">
+                @Html.DisplayNameFor(model => model.JournalEntry.Notes)<br />
+                @Html.DisplayFor(model => model.JournalEntry.Notes)
+            </p>
+        </div>
+    </div>
+
+</div>
+<br />
+<br />
+
+<form method="post">
+    <input type="hidden" asp-for="JournalEntry.ID" />
+    <input type="submit" value="Delete" class="btn btn-danger" />
+    <a class="link" asp-page=./Index>Back to List</a>
+</form>
+
+
+
+
+
+
+
+
+
+<!--<div>
+
+    <h1 class="h1"><span></span><span></span><span></span>
+        @Html.DisplayFor(model => model.JournalEntry.Book)
+        @Html.DisplayFor(model => model.JournalEntry.Chapter)
+        @Html.DisplayFor(model => model.JournalEntry.Verse)
+    </h1>
+    <hr /><br /><br />
+
+    <div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div class="rowD">
+                    <p id="details">
+                        @Html.DisplayNameFor(model => model.JournalEntry.EntryDate) :
+                        @Html.DisplayFor(model => model.JournalEntry.EntryDate)
+                    </p><br />
+
+                </div>
+                <div class="rowD">
+                    <p id="details">
+                        @Html.DisplayNameFor(model => model.JournalEntry.Book) :
+                        @Html.DisplayFor(model => model.JournalEntry.Book)
+                    </p><br />
+                </div>
+                <div class="rowD">
+                    <p id="details">
+                        @Html.DisplayNameFor(model => model.JournalEntry.Chapter) :
+                        @Html.DisplayFor(model => model.JournalEntry.Chapter)
+                    </p><br />
+                </div>
+                <div class="rowD">
+                    <p id="details">
+                        @Html.DisplayNameFor(model => model.JournalEntry.Verse) :
+                        @Html.DisplayFor(model => model.JournalEntry.Verse)
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-.5"></div>
+            <div class="col-md-6">
+                <p id="details">
+                    @Html.DisplayNameFor(model => model.JournalEntry.Notes)<br />
+                    @Html.DisplayFor(model => model.JournalEntry.Notes)
+                </p>
+            </div>
+        </div>
+
+    </div><br /> <div>
+
+        <div class="row">
+            <div class="col-md-1"></div>
+            <dl class="col-md-4">
+                <dl class="row">
+
+                    <dt class="delete">
+
+                        @Html.DisplayNameFor(model => model.JournalEntry.Book)
+
+                    </dt>
+                    <span></span>
+                    <dd class="delete">
+                        @Html.DisplayFor(model => model.JournalEntry.Book)
+                    </dd>
+
+                </dl>
+                <dl class="row">
+                    <dt class="delete">
+                        @Html.DisplayNameFor(model => model.JournalEntry.EntryDate)
+                    </dt>
+                    <span></span>
+                    <dd class="delete">
+                        @Html.DisplayFor(model => model.JournalEntry.EntryDate)
+                    </dd>
+
+                </dl>
+                <dl class="row">
+                    <dt class="delete">
+                        @Html.DisplayNameFor(model => model.JournalEntry.Chapter)
+                    </dt>
+                    <span></span>
+                    <dd class="delete">
+                        @Html.DisplayFor(model => model.JournalEntry.Chapter)
+                    </dd>
+                </dl>
+                <dl class="row">
+                    <dt class="delete">
+                        @Html.DisplayNameFor(model => model.JournalEntry.Verse)
+                    </dt>
+                    <span></span>
+                    <dd class="delete">
+                        @Html.DisplayFor(model => model.JournalEntry.Verse)
+                    </dd>
+                </dl>
+                <br />
+                <br />
+                <br />
+                <form method="post">
+                    <input type="hidden" asp-for="JournalEntry.ID" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a class="link" asp-page=./Index>Back to List</a>
+                </form>
+
+            </dl>
+            <dl class="col-md-1"></dl>
+            <dl class="col-md-6">
+                <dt class="delete2">
+                    @Html.DisplayNameFor(model => model.JournalEntry.Notes)
+                </dt>
+                <br />
+                <dd class="delete1">
+                    @Html.DisplayFor(model => model.JournalEntry.Notes)
+                </dd>
+
+            </dl>
+        </div>
+
+    </div>
+    <form method="post">
+        <input type="hidden" asp-for="JournalEntry.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a class="link" asp-page=./Index>Back to List</a>
+    </form> -->
