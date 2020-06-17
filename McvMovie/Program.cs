@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 using System;
 using Microsoft.EntityFrameworkCore;
 using MvcMovie.Models;
-using MvcMovie;
 using McvMovie;
 
 namespace MvcMovie
@@ -35,9 +34,9 @@ namespace MvcMovie
 
             host.Run();
         }
-
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+          WebHost.CreateDefaultBuilder(args)
+              .UseStartup<Startup>();
     }
+
 }

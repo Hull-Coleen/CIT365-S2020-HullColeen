@@ -5,7 +5,10 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
-  color: white;
+}
+.navbar {
+    background-color: #b208ff;
+    color: white;
 }
 
 /* Provide sufficient contrast against white background */
@@ -17,6 +20,7 @@ a {
 }
 body {
     background-color: #eac2fc;
+    color: #5f018a;
 }
 .btn-primary {
   color: #fff;

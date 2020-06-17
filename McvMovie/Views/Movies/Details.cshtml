@@ -40,6 +40,14 @@
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Rating)
         </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Image)
+        </dt>
+        <dd class="col-md-10">
+            <img src="@Html.DisplayFor(modelItem => Model.Image)" />
+            alert(@Html.DisplayFor(modelItem => Model.Image));
+
+        </dd>
     </dl>
 </div>
 <div>
