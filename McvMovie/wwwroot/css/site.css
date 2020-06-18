@@ -13,10 +13,16 @@ a.navbar-brand {
 
 /* Provide sufficient contrast against white background */
 a {
+    color: brown;
+}
+tr {
     color: #b208ff;
 }
-#nav {
+#nav, #nav1, #nav2{
     color: white;
+}
+#nav1 {
+    padding-right: 10px;
 }
 body {
     background-color: #eac2fc;

@@ -4,10 +4,10 @@
     ViewData["Title"] = "Movie Details";
 }
 
-<h1>More Detailed Information</h1>
+<h1>Detailed Information</h1>
 
 <div>
-    <h4>Here is the detailed Information about the Movie in my list</h4>
+    <h4> "@Html.DisplayFor(model => model.Title)" Information</h4>
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
@@ -45,8 +45,6 @@
         </dt>
         <dd class="col-md-10">
             <img src="@Html.DisplayFor(modelItem => Model.Image)" />
-            alert(@Html.DisplayFor(modelItem => Model.Image));
-
         </dd>
     </dl>
 </div>

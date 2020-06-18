@@ -4,7 +4,7 @@
     ViewData["Title"] = "Movie List";
 }
 
-<h1>My List of Church Movies</h1>
+<h1>Church Movies List</h1>
 
 <p>
     <a asp-action="Create">Add New</a>
@@ -16,12 +16,12 @@
         </select>
 
         Title: <input type="text" asp-for="SearchString" />
-        <input type="submit" value="Filter" />
+        <input class="index"   type="submit" value="Filter" />
     </p>
 </form>
 <table class="table">
     <thead>
-        <tr>
+        <tr class="index" >
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Title)
             </th>
@@ -45,7 +45,7 @@
     <tbody>
         @foreach (var item in Model.Movies)
         {
-        <tr>
+        <tr class="index" >
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
