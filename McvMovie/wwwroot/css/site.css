@@ -18,6 +18,11 @@ a {
 tr {
     color: #b208ff;
 }
+#index {
+    background-color: white;
+    color: #b208ff;
+    border: 1px solid #b208ff;
+}
 #nav, #nav1, #nav2{
     color: white;
 }

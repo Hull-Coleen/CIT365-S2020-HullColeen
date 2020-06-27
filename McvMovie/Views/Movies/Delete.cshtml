@@ -4,54 +4,71 @@
     ViewData["Title"] = "Delete Movie";
 }
 
-    <h1>Delete From Movies List</h1>
+<h1>Delete From Movies List</h1>
 
-    <h3>Are you sure you want to delete "@Html.DisplayFor(model => model.Title)" from the list?</h3>
+<h3>Are you sure you want to delete "@Html.DisplayFor(model => model.Title)" from the list?</h3>
+
 <div>
-    
     <hr />
-    <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.ReleaseDate)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.ReleaseDate)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Genre)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Genre)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
-        <dd class="col-md-10">
-            <img src="@Html.DisplayFor(modelItem => Model.Image)" />
-        </dd>
-    </dl>
-    
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="Id" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
-    </form>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <dl class="col-md-4">
+            <div class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Title)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.Title)
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.ReleaseDate)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.ReleaseDate)
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Genre)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.Genre)
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Price)
+                </dt>
+                <dd class="col-sm-6">
+                    @Html.DisplayFor(model => model.Price)
+                </dd>
+            </div>
+            <div class="row">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Rating)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Rating)
+                </dd>
+            </div>
+
+        </dl>
+        <dl class="col-md-6">
+            <dd class="col-md-10">
+                <img src="@Html.DisplayFor(modelItem => Model.Image)" />
+            </dd>
+        </dl>
+    </div>
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-4">
+            <form asp-action="Delete">
+                <input type="hidden" asp-for="Id" />
+                <input type="submit" value="Delete" class="btn btn-danger" /> |
+                <a asp-action="Index">Back to List</a>
+            </form>
+        </div>
+    </div>
 </div>
